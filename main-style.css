@@ -1,0 +1,105 @@
+html {
+    font-family:caveat;
+    font-size: 16px;
+    width: 100vw;
+    display: flex;
+}
+body {
+    margin: 0px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background-color: black;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main {
+    margin-left: 160px;
+    margin-right: 160px;
+}
+footer {
+    background-color: black;
+    height: 120px;
+    width: 100%;
+}
+ul {
+    display: flex;
+}
+figure {
+    all: unset;
+}
+h1 {
+    margin-left:160px;
+    font-family:caveat;
+    font-size: 40px;
+}
+.logo-container {
+    width: auto;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 24px;
+    padding-left: 160px;
+}
+img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.logo-container img {
+    height: 64px;
+}
+img:hover {
+    transition: transform 0.4s ease;
+    transform: scale(1.1);
+    cursor: pointer;
+    opacity: 0.8;
+}
+.logo-container img:hover {
+    transition: none !important;
+    transform: none !important;
+}
+figcaption {
+    display: none;
+}
+
+.side-distance {
+    margin-left: clamp(20px, 10vw, 160px);
+    margin-right: clamp(20px, 10vw, 160px);
+}
+nav {
+    display: flex;
+    flex-direction: row;
+}
+.social-media-btn {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+#x {
+    background-image: url(/img/twitter_white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#facebook {
+    background-image: url(/img/facebook_white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#instagram {
+    background-image: url(/img/instagram_white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@font-face {
+    font-family:caveat;
+    src:
+    url(/font/Caveat/Caveat-VariableFont_wght.ttf)
+}

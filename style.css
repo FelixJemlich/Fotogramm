@@ -1,4 +1,13 @@
-.picture-container{
+.container-layout {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 32px;
+    flex: 1;
+}
+.picture-container {
     border-radius: 10px;
-    border: 
+}
+
+@media screen {
+    
 }
