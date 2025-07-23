@@ -3,6 +3,7 @@
     grid-template-columns: auto auto auto auto;
     gap: 32px;
     flex: 1;
+    margin-bottom: 32px;
 }
 .picture-container {
     border-radius: 10px;
