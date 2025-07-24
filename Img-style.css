@@ -8,8 +8,15 @@
 .picture-container {
     border-radius: 10px;
 }
-.outer {
 
+/*in JS überführen nach Testung:*/
+.outer {
+    position: absolute;
+    background-color: rgb(4, 4, 124);
+    border-radius: 20px;
+    width: 250px;
+    height: 500px;
+    z-index: 2;
 }
 .inner {
     
