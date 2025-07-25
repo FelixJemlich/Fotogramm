@@ -1,4 +1,4 @@
-//ids generieren
+
 let ImgName = [
     "Santa Croce",
     "Iglesia Parroquial",
@@ -13,25 +13,6 @@ let ImgName = [
     "Westminster Abbey",
     "Auferstehungskirche",
 ];
-
-function createChurchIds(){
-    let ids=[];
-    for (let i = 1; i <= ImgName.length; i++) {
-        ids.push(`church-${i}`);
-    }
-    return ids;
-};
-let churchIds = createChurchIds();
-
-function createImageSrc(){
-    let ImgSrc=[];
-    for (let i = 1; i <= ImgName.length; i++) {
-        ImgSrc.push(`/img/Church-${i}-min.jpg`);
-    }
-    return ImgSrc;
-};
-
-let ImageSrc = createImageSrc();
 
 let ImageAlt= [
     "Santa Croce, gotische Franziskanerkirche in Form einer Basilika",
@@ -90,7 +71,30 @@ let ImageCaption= [
     "Zwiebeltürme und als Gedenkstätte an die Ermordung Zar Alexanders II.",
 ];
 
-//id mit class container als figure in Seite einbinden mit figcaption alt etc.
+
+
+
+function createChurchIds(){
+    let ids=[];
+    for (let i = 1; i <= ImgName.length; i++) {
+        ids.push(`church-${i}`);
+    }
+    return ids;
+};
+let churchIds = createChurchIds();
+
+function createImageSrc(){
+    let ImgSrc=[];
+    for (let i = 1; i <= ImgName.length; i++) {
+        ImgSrc.push(`/img/Church-${i}-min.jpg`);
+    }
+    return ImgSrc;
+};
+
+let ImageSrc = createImageSrc();
+
+
+
 
 function loadImg(){
     let contentRef = document.getElementById('maincontainer');
@@ -98,6 +102,8 @@ function loadImg(){
     contentRef.innerHTML += adressImg(i, ImageCaption, ImageAlt, ImageSrc, churchIds);
     };
 };
+
+
 function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
     return`
     <figure id="${churchIds[i]}" onclick="modalEvent()" class = "picture-container">
@@ -106,7 +112,16 @@ function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
     </figure>
     `;
 };
-// function modalEvent
+
+
+function modalEvent (){
+    //
+    //dialog aufrufen auf vorderster ebene zwei boxen eine outer und inner eventbubbling beachten
+    //bild muss nach id zugeordnet werden von church-1 bis church-12
+    //überschrift in box
+    //figcaption anschalten und in box // diese muss wieder austogglebar sein. vll extrafunction
+    //Feile in box
+}
 
 
 
@@ -120,24 +135,9 @@ function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
 // }
 
 
-
-
-
-// Schema picture container
-//         <main class="container-layout">
-//             <figure id="church-1" onclick="" class = "picture-container">
-//                 <img src="./img/Church-1-min.jpg" alt="Santa Croce, gotische Franziskanerkirche in Form einer Basilika" loading="lazy">
-//                 <figcaption>Santa Croce in Florenz ist eine bedeutende Franziskanerkirche, bekannt für ihre prächtige gotische Architektur und als Ruhestätte vieler berühmter Italiener wie Michelangelo, Galileo und Machiavelli.</figcaption>
-//             </figure>
-//         </main>
-
     // <Dialog id="outer">
     //     <div class="inner"></div>
 
 
 
-// 1.1) Ich will die figures rendern und ins Html laden mit der id church-1 bis church-12
-// 1.2) Ich will das diese im display grid angeordnet sind. 
-// 1.3) Ich will das diese hoverbar sind und eine translation drin haben für zoom effekt effekt
-// 1.4) beim klick ploppt ein Dialog auf mit den Elementen Pfeilen und dem Kreuz
-// 1.5) der Dialog hat den Titel
+
