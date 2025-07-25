@@ -1,24 +1,37 @@
 //ids generieren
-function createChurchIds(ids){
-    
-    for (let i = 1; i <= 12; i++) {
+let ImgName = [
+    "Santa Croce",
+    "Iglesia Parroquial",
+    "St. Martin Kirche",
+    "Kloster Ettal",
+    "Jungfrau Maria Kirche",
+    "Tibidabo-Kirche",
+    "Die St.-Katharinenkirche",
+    "Agios Georgios",
+    "Die Michaelerkirche",
+    "Iglesia de San Miguel",
+    "Westminster Abbey",
+    "Auferstehungskirche",
+];
+
+function createChurchIds(){
+    let ids=[];
+    for (let i = 1; i <= ImgName.length; i++) {
         ids.push(`church-${i}`);
     }
     return ids;
 };
-const churchIds=createChurchIds();
+let churchIds = createChurchIds();
 
-function ImageSrc(ImgSrc){
-    
-    for (let i = 1; i <= 12; i++) {
-        ImgSrc.push(`./img/Church-${i}-min.jpg`);
+function createImageSrc(){
+    let ImgSrc=[];
+    for (let i = 1; i <= ImgName.length; i++) {
+        ImgSrc.push(`/img/Church-${i}-min.jpg`);
     }
     return ImgSrc;
 };
 
-let ImgName= [
-
-];
+let ImageSrc = createImageSrc();
 
 let ImageAlt= [
     "Santa Croce, gotische Franziskanerkirche in Form einer Basilika",
@@ -78,10 +91,23 @@ let ImageCaption= [
 ];
 
 //id mit class container als figure in Seite einbinden mit figcaption alt etc.
-function loadImages(){
-document.getElementById("maincontainer")
-console.log("Bilder werden geladen...");
+
+function loadImg(){
+    let contentRef = document.getElementById('maincontainer');
+    for (let i = 0; i < ImageCaption.length; i++) {
+    contentRef.innerHTML += adressImg(i, ImageCaption, ImageAlt, ImageSrc, churchIds);
+    };
 };
+function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
+    return`
+    <figure id="${churchIds[i]}" onclick="modalEvent()" class = "picture-container">
+        <img src="${ImageSrc[i]}" alt="${ImageAlt[i]}" loading="lazy">
+        <figcaption>${ImageCaption[i]}</figcaption>
+    </figure>
+    `;
+};
+// function modalEvent
+
 
 
 //Overlay für den body
