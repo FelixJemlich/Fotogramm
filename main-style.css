@@ -1,15 +1,15 @@
 html {
     font-family:caveat;
     font-size: 16px;
-    display: flex;
 }
 body {
     margin: 0px;
+    width: 100%;
+}
+.page-wrapper {
     display: flex;
-    flex: 1;
     flex-direction: column;
     min-height: 100vh;
-    z-index: -1;
 }
 header {
     background-color: black;
@@ -22,6 +22,8 @@ header {
 main {
     margin-left: 160px;
     margin-right: 160px;
+    flex:1;
+    
 }
 footer {
     background-color: black;
@@ -56,7 +58,6 @@ figure {
 h1 {
     margin-left:160px;
     font-family:caveat;
-    font-size: 40px;
 }
 .logo-container {
     width: auto;

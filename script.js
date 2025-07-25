@@ -114,16 +114,48 @@ function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
 };
 
 
+function renderFiltered(index) {
+    if (index == 1) {
+        // arrTitles = randomTitles;
+        // arrDescriptions = randomDescriptions;
+        render(randomTitles, randomDescriptions);
+    }
+    if (index == 2){
+        // arrTitles = randomTitlesSecond;
+        // arrDescriptions = randomDescriptionsSecond;
+        render(randomTitlesSecond, randomDescriptionsSecond);
+    }
+}
+
+
 function modalEvent (){
+    let overlay = document.getElementById('overlay');
+    overlay.classList.toggle('d_none');
+}
+
+    let overlayRef = document.getElementById('overlay')
+    overlayRef.classList.toggle('d_none')
+
+
+// function on() {
+//     document.getElementById("overlay").style.display = "block";
+// }
+
+// function off() {
+//     document.getElementById("overlay").style.display = "none";
+// }
     //
     //dialog aufrufen auf vorderster ebene zwei boxen eine outer und inner eventbubbling beachten
     //bild muss nach id zugeordnet werden von church-1 bis church-12
     //überschrift in box
     //figcaption anschalten und in box // diese muss wieder austogglebar sein. vll extrafunction
-    //Feile in box
-}
+    //Pfeile in box
 
+// function toggleOverlay(index){
+//     let overlayRef = document.getElementById('overlay')
 
+//     overlayRef.classList.toggle('d_none')
+// }
 
 //Overlay für den body
 // body.overlay {

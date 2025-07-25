@@ -1,0 +1,70 @@
+.positioning-inpage {
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    top: 50px;
+    left: 30%;
+    right: 30%;
+}
+#dialog{
+    width: 400px;
+    height:600px;
+    background-color: rgb(89, 116, 204);
+    border-radius: 20px;
+}
+.positioning {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cross-btn{
+    padding-left: 160px;
+}
+.cross-btn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    filter:drop-shadow(5px 5px 20px);
+}
+.arrow-btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    filter:drop-shadow(1px 1px 15px);
+}
+.circle-btn {
+    border-radius: 25px;
+    height: 35px;
+    width: 35px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn-aligning {
+    display: flex;
+    gap: 32px;
+    padding-bottom: 16px;
+    align-items: center;
+    flex-direction: row;
+    margin: 0px;
+}
+button{
+    all:unset;
+}
+.churchid-box{
+    height: 300px;
+    width: 300px;
+    background-color: black;
+    margin-bottom: 150px;
+}
+.img-title-align{
+    display: flex;
+    padding-top: 16px;
+}
+.picture-from {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
