@@ -86,7 +86,7 @@ let churchIds = createChurchIds();
 function createImageSrc(){
     let ImgSrc=[];
     for (let i = 1; i <= ImgName.length; i++) {
-        ImgSrc.push(`/img/Church-${i}-min.jpg`);
+        ImgSrc.push(`./img/Church-${i}-min.jpg`);
     }
     return ImgSrc;
 };
@@ -133,7 +133,7 @@ function dialogWindow (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
         <div class="positioning" id="dialog">
             <div class="img-title-align">
                 <p class="picture-from">
-                    das ist img 3<!-- hier kommt der Dokumententitel rein -->
+                    das ist img 3
                 </p>
                 <button id="close" class="cross-btn">    
                     <i class="fa-solid fa-xmark fa-xl"></i>
@@ -157,10 +157,10 @@ function dialogWindow (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
     `
 }
 
-let closeDialog = document.getElementById("close")[0];
-
-// closeDialog.onclick = function() {
-//     dialog-popup.style.display = "none";
+closeDialog.onclick = function() {
+    let dialogPopup = document.getElementById("close");
+    dialogPopup.style.display = "none";
+};
 //     overlay.style.display ="none";
 //     loadImg()
 // }
