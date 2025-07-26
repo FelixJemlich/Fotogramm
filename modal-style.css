@@ -2,8 +2,8 @@
     display: flex;
     position: fixed;
     z-index: 3;
-    top: 50px;
-    left: 30%;
+    top: 10px;
+    left: 40%;
     right: 30%;
 }
 #dialog{
@@ -67,4 +67,28 @@ button{
     width: 100px;
     display: flex;
     justify-content: center;
+}
+@media screen and (max-width: 950px) {
+    #dialog {
+        width:50vw;
+    }
+    .churchid-box {
+        width:70%;
+        height:70vw;
+    }
+    .cross-btn {
+        padding-left:clamp(16px, 10vw, 160px)
+    }
+    .btn-aligning {
+        gap:0px;
+        padding-left: 16px;
+    }
+    .picture-from {
+        width:80px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .positioning-inpage {
+        left:27%;
+    }
 }
