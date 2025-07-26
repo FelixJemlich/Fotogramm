@@ -114,61 +114,58 @@ function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
 };
 
 
-function renderFiltered(index) {
-    if (index == 1) {
-        // arrTitles = randomTitles;
-        // arrDescriptions = randomDescriptions;
-        render(randomTitles, randomDescriptions);
-    }
-    if (index == 2){
-        // arrTitles = randomTitlesSecond;
-        // arrDescriptions = randomDescriptionsSecond;
-        render(randomTitlesSecond, randomDescriptionsSecond);
-    }
-}
-
+let overlayRef = document.getElementById('overlay')
+    overlayRef.classList.toggle('d_none')
 
 function modalEvent (){
     let overlay = document.getElementById('overlay');
     overlay.classList.toggle('d_none');
+    dialogWindow();
+    let innerDialogImg= document.getElementById('dialog-popup');
+    for (let i = 0; i < ImageCaption.length; i++) {
+    innerDialogImg.innerHTML += dialogWindow(i, ImageCaption, ImageAlt, ImageSrc, churchIds);
+    };
 }
 
-    let overlayRef = document.getElementById('overlay')
-    overlayRef.classList.toggle('d_none')
+function dialogWindow (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
+    return`
+        <div class="positioning-inpage">
+        <div class="positioning" id="dialog">
+            <div class="img-title-align">
+                <p class="picture-from">
+                    das ist img 3<!-- hier kommt der Dokumententitel rein -->
+                </p>
+                <button id="close" class="cross-btn">    
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </button>
+            </div>
+            <div class="churchid-box"id="churchId">
+            </div>
+            <nav class="btn-aligning">
+                <button onclick="nextpictureLeft()" class="circle-btn arrow-btn">
+                    <i class="fa-solid fa-arrow-left fa-xl"></i>
+                </button>
+                <p class="picture-from">
+                    1 / 12<!-- hier kommt die Info rein für den Fortschritt 1 von 12 -->
+                </p>
+                <button onclick="nextpictureRíght()" class="circle-btn arrow-btn">
+                    <i class="arrow-btn fa-solid fa-arrow-right fa-xl"></i>
+                </button>
+            </nav>
+        </div>
+    </div>
+    `
+}
 
+let closeDialog = document.getElementById("close")[0];
 
-// function on() {
-//     document.getElementById("overlay").style.display = "block";
+// closeDialog.onclick = function() {
+//     dialog-popup.style.display = "none";
+//     overlay.style.display ="none";
+//     loadImg()
 // }
 
-// function off() {
-//     document.getElementById("overlay").style.display = "none";
-// }
-    //
-    //dialog aufrufen auf vorderster ebene zwei boxen eine outer und inner eventbubbling beachten
-    //bild muss nach id zugeordnet werden von church-1 bis church-12
-    //überschrift in box
-    //figcaption anschalten und in box // diese muss wieder austogglebar sein. vll extrafunction
-    //Pfeile in box
 
-// function toggleOverlay(index){
-//     let overlayRef = document.getElementById('overlay')
-
-//     overlayRef.classList.toggle('d_none')
-// }
-
-//Overlay für den body
-// body.overlay {
-//     background-color: rgb(0, 0, 0, 0.375);
-//     width: 100%;
-//     height: 100vh;
-//     z-index: 1;
-//     pointer-events: none;
-// }
-
-
-    // <Dialog id="outer">
-    //     <div class="inner"></div>
 
 
 
