@@ -42,7 +42,6 @@ footer {
     font-size: 24px;
     color: white;
     align-items: center;
-    padding-left:clamp(16px, 10vw, 160px);
 }
 .Inquiry:hover {
     text-decoration: none;
@@ -152,6 +151,9 @@ li:hover {
 @media screen and (max-width: 650px) {
     #footer-logo {
         display: none;
+    }
+    .Inquiry {
+        padding-left:clamp(16px, 10vw, 160px);
     }
 }
 @media screen and (max-width: 450px) {
