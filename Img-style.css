@@ -32,6 +32,14 @@
 .d_none {
     display: none;
 }
-@media screen {
 
+@media screen and (max-width: 950px) {
+    .container-layout {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width: 450px) {
+    .container-layout {
+        gap: 16px;
+    }
 }

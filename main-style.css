@@ -41,6 +41,8 @@ footer {
     gap: 16px;
     font-size: 24px;
     color: white;
+    align-items: center;
+    padding-left:clamp(16px, 10vw, 160px);
 }
 .Inquiry:hover {
     text-decoration: none;
@@ -118,4 +120,52 @@ li:hover {
 @font-face {
     font-family:caveat;
     src:url(/font/Caveat/Caveat-VariableFont_wght.ttf)
+}
+@media screen and (max-width: 950px) {
+    .social-media-btn {
+        width:36px;
+        height:36px;
+    }
+    .logo-container img {
+        height: 48px;
+    }
+    .Inquiry {
+        font-size: 16px;
+    }
+    footer {
+        justify-content: space-evenly;
+    }
+    main {
+        margin-left:clamp(16px, 10vw, 160px);
+        margin-right:clamp(16px, 10vw, 160px);
+    }
+    h1 {
+        margin-left:clamp(16px, 10vw, 160px);
+    }
+    .logo-container {
+        padding-left:clamp(16px, 10vw, 160px);
+    }
+    nav {
+        margin-right:clamp(16px, 10vw, 160px);
+    }
+}
+@media screen and (max-width: 650px) {
+    #footer-logo {
+        display: none;
+    }
+}
+@media screen and (max-width: 450px) {
+    h1 {
+        font-size: 24px;
+    }
+    .social-media-btn {
+        width: 24px;
+        height: 24px;
+    }
+    ul {
+        padding-left: 0px;
+    }
+    .Inquiry {
+        gap: 8px;
+    }
 }
