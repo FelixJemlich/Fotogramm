@@ -121,6 +121,16 @@ li:hover {
     cursor: pointer;
     opacity: 0.8;
 }
+.aligning{
+    text-align: center;
+    white-space: 10px;
+}
+.aligning h1 {
+    margin:unset;
+}
+.aligning a {
+    color: red;
+}
 @font-face {
     font-family:caveat;
     src:url(/font/Caveat/Caveat-VariableFont_wght.ttf)
