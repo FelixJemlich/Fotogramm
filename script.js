@@ -110,6 +110,13 @@ function openImgDetailDialog(imgId){
     innerDialogImg.innerHTML = dialogWindow(imgId, ImageCaption, ImageAlt, ImageSrc, ImgName, churchIds);
 };
 
+function overlayClick(event){
+    event.stopPropagation()
+    let innerDialogImg = document.getElementById('dialog-popup');
+    innerDialogImg.classList.add('d_none');   
+    let overlay = document.getElementById('overlay');
+    overlay.classList.add('d_none');        
+}
 
 function dialogWindow (imgId, ImageCaption, ImageAlt, ImageSrc, ImgName){
     return`
