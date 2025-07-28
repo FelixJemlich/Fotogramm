@@ -78,9 +78,9 @@ button{
 }
 .caption-aligning{
     padding-bottom: 100px;
+    position: fixed;
+    top: 475px;
 }
-
-
 
 @media screen and (max-width: 950px) {
     .churchid-box {

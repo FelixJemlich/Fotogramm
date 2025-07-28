@@ -14,6 +14,8 @@ let ImgName = [
     "Auferstehungskirche",
 ];
 
+let currentImg = 0;
+
 let ImageAlt= [
     "Santa Croce, gotische Franziskanerkirche in Form einer Basilika",
     "Iglesia Parroquial, Pfarrkirche",
@@ -62,8 +64,8 @@ let ImageCaption= [
 
 function createChurchIds(){
     let ids=[];
-    for (let i = 1; i <= ImgName.length; i++) {
-        ids.push(`church-${i}`);
+    for (let imgId = 1; imgId <= ImgName.length; imgId++) {
+        ids.push(`church-${imgId}`);
     }
     return ids;
 };
@@ -71,8 +73,8 @@ let churchIds = createChurchIds();
 
 function createImageSrc(){
     let ImgSrc=[];
-    for (let i = 1; i <= ImgName.length; i++) {
-        ImgSrc.push(`./img/Church-${i}-min.jpg`);
+    for (let imgId = 1; imgId <= ImgName.length; imgId++) {
+        ImgSrc.push(`./img/Church-${imgId}-min.jpg`);
     }
     return ImgSrc;
 };
@@ -84,61 +86,57 @@ let ImageSrc = createImageSrc();
 
 function loadImg(){
     let contentRef = document.getElementById('maincontainer');
-    for (let i = 0; i < ImageCaption.length; i++) {
-    contentRef.innerHTML += adressImg(i, ImageCaption, ImageAlt, ImageSrc, churchIds);
+    for (let imgId = 0; imgId < ImageCaption.length; imgId++) {
+    contentRef.innerHTML += adressImg(imgId, ImageCaption, ImageAlt, ImageSrc, churchIds);
     };
 };
 
 
-function adressImg (i, ImageCaption, ImageAlt, ImageSrc, churchIds){
+function adressImg (imgId, ImageCaption, ImageAlt, ImageSrc, churchIds){
     return`
-    <figure id="${churchIds[i]}" onclick="modalEvent(this)" class = "picture-container">
-        <img src="${ImageSrc[i]}" alt="${ImageAlt[i]}" loading="lazy">
-        <figcaption>${ImageCaption[i]}</figcaption>
+    <figure id="${churchIds[imgId]}" onclick="openImgDetailDialog(${[imgId]})" class = "picture-container">
+        <img src="${ImageSrc[imgId]}" alt="${ImageAlt[imgId]}" loading="lazy">
+        <figcaption>${ImageCaption[imgId]}</figcaption>
     </figure>
     `;
 };
 
-
-let overlayRef = document.getElementById('overlay')
-    overlayRef.classList.toggle('d_none')
-
-function modalEvent (el){
-    const id = el.id;
-    const i = churchIds.indexOf(id); 
-
+function openImgDetailDialog(imgId){
     let overlay = document.getElementById('overlay');
     overlay.classList.remove('d_none');
 
     let innerDialogImg = document.getElementById('dialog-popup')
-    innerDialogImg.innerHTML = dialogWindow(i, ImageCaption, ImageAlt, ImageSrc, ImgName, churchIds);
+    innerDialogImg.classList.remove('d_none')
+    innerDialogImg.innerHTML = dialogWindow(imgId, ImageCaption, ImageAlt, ImageSrc, ImgName, churchIds);
 };
 
 
-function dialogWindow (i, ImageCaption, ImageAlt, ImageSrc, ImgName){
+function dialogWindow (imgId, ImageCaption, ImageAlt, ImageSrc, ImgName){
     return`
         <div class="positioning-inpage">
         <div class="positioning" id="dialog">
             <div class="img-title-align">
                 <p id="picture-from" class="picture-from">
-                    <strong>${ImgName[i]}</strong>
+                    <strong>${ImgName[imgId]}</strong>
                 </p>
-                <button onclick=("close") class="cross-btn">    
+                <button onclick="closeDialogWindow()" class="cross-btn">    
                     <i class="fa-solid fa-xmark fa-xl"></i>
                 </button>
             </div>
-            <div class="churchid-box"id="churchId-${i}">
-                <img class="churchid-box" src="${ImageSrc[i]}" alt="${ImageAlt[i-1]}">
+            <div class="churchid-box"id="churchId-${imgId}">
+                <img class="churchid-box" src="${ImageSrc[imgId]}" alt="${ImageAlt[imgId-1]}">
             </div>
-            <span class="caption-aligning">${ImageCaption[i]}</span>
+            <div>
+            <p class="caption-aligning">${ImageCaption[imgId]}</p>
+            </div>
             <nav class="btn-aligning">
                 <button onclick="nextpictureLeft()" class="circle-btn arrow-btn">
                     <i class="fa-solid fa-arrow-left fa-xl"></i>
                 </button>
                 <p class="picture-from">
-                    ${i+1} / ${ImgName.length}
+                    ${imgId+1} / ${ImgName.length}
                 </p>
-                <button onclick="nextpictureRíght()" class="circle-btn arrow-btn">
+                <button onclick="nextpictureRight()" class="circle-btn arrow-btn">
                     <i class="arrow-btn fa-solid fa-arrow-right fa-xl"></i>
                 </button>
             </nav>
@@ -146,33 +144,22 @@ function dialogWindow (i, ImageCaption, ImageAlt, ImageSrc, ImgName){
     </div>
     `
 }
-
-function nextpictureRíght(i){
-    let nextIndex=(i+1)% ImgName.length;
-    let innerDialogImg = document.getElementById('dialog-popup');
-    innerDialogImg.innerHTML = dialogWindow(nextIndex, ImageCaption, ImageAlt, ImageSrc, ImgName);
+function nextpictureLeft() {
+    currentImg--;
+    if (currentImg < 0) currentImg = ImageCaption.length - 1;
+    openImgDetailDialog(currentImg);
 }
 
-function nextpictureLeft(){
-    let nextIndex=(i-1)% ImgName.length;
-    let innerDialogImg = document.getElementById('dialog-popup');
-    innerDialogImg.innerHTML = dialogWindow(nextIndex, ImageCaption, ImageAlt, ImageSrc, ImgName);
+function nextpictureRight() {
+    currentImg++;
+    if (currentImg >= ImageCaption.length) currentImg = 0;
+    openImgDetailDialog(currentImg);
 }
 
-// onclick event für den cross btn
-// closeDialog.onclick = function() {
-//     let dialogPopup = document.getElementById("dialog");
-//     dialogPopup.style.display = "none";
-// };
-
-
-
-//     overlay.style.display ="none";
-//     loadImg()
-// }
-
-
-
-
-
+function closeDialogWindow(){
+    let innerDialogImg = document.getElementById('dialog-popup');
+    innerDialogImg.classList.add('d_none');   
+    let overlay = document.getElementById('overlay');
+    overlay.classList.add('d_none');    
+}
 
