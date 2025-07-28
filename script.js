@@ -115,14 +115,7 @@ function openImgDetailDialog(imgId) {
 
     let innerDialogImg = document.getElementById("dialog-popup");
     innerDialogImg.classList.remove("d_none");
-    innerDialogImg.innerHTML = dialogWindow(
-    imgId,
-    ImageCaption,
-    ImageAlt,
-    ImageSrc,
-    ImgName,
-    churchIds
-    );
+    innerDialogImg.innerHTML = dialogWindow(imgId,ImageCaption,ImageAlt,ImageSrc,ImgName,churchIds);
 }
 
 function overlayClick(event) {

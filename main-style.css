@@ -148,6 +148,16 @@ li:hover {
     font-family:caveat;
     src:url(./font/Caveat/Caveat-VariableFont_wght.ttf)
 }
+@media screen and (min-width: 1920px) {
+        .page-wrapper{
+        min-height: 100vh;
+    }
+}
+@media screen and (max-width: 1920px) {
+    .page-wrapper{
+        min-height: 70vh;
+    }
+}
 @media screen and (max-width: 950px) {
     .social-media-btn {
         width:36px;
