@@ -1,17 +1,19 @@
 .positioning-inpage {
-    display: flex;
-    position: fixed;
-    z-index: 3;
-    top: 10px;
-    left: 25%;
-    right: 30%;
+    padding: 32px;
+    border-radius: 12px;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    z-index: 4;
 }
 #dialog{
     width: 600px;
-    height:600px;
-    background-color: rgb(184, 195, 231);
+    height:500px;
+    background-color: rgb(241 150 114);
     border-radius: 20px;
     border-color: rgb(255, 240, 240);
+    z-index: 5;
 }
 .positioning {
     display: flex;
@@ -46,10 +48,9 @@
     justify-content: center;
 }
 .btn-aligning {
-    position: fixed;
-    top: 530px;
+    position: relative;
+    top: -150px;
     gap: 32px;
-    padding-bottom: 16px;
     align-items: center;
     flex-direction: row;
     margin: 0px;
@@ -80,8 +81,6 @@ button{
     white-space: nowrap;
 }
 .caption {
-    display: flex;
-    justify-content: center;
     margin-bottom: 150px;
     margin-left: 10px;
     margin-right: 10px;
@@ -102,9 +101,6 @@ button{
     }
 }
 @media screen and (max-width: 950px) {
-    .cross-btn {
-        left: 350px;
-    }
     .btn-aligning {
         gap:0px;
         padding-left: 16px;
@@ -124,8 +120,6 @@ button{
     }
     .positioning-inpage {
         display: flex;
-        position: fixed;
-        z-index: 3;
         top: 10px;
         left: 5%;
         right: 25%;
@@ -133,9 +127,8 @@ button{
     .cross-btn {
         left:unset;
     }
-}
-@media screen and (max-width: 430px) {
-    .cross-btn {
-        left:215px;
+    #dialog {
+        min-width: 200px;
+        width: unset;
     }
 }

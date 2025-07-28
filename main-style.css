@@ -13,6 +13,22 @@ body {
     max-width: 1920px;
     margin: 0 auto;
 }
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
 .too-small-warning {
     display: none;
 }
@@ -22,7 +38,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 main {
     margin-left: 160px;
@@ -36,7 +52,7 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .Inquiry {
@@ -57,6 +73,7 @@ ul {
     gap:16px;
     margin-top: 0px;
     margin-bottom: 0px;
+    padding-top: 16px;
 }
 figure {
     all: unset;
@@ -66,10 +83,6 @@ h1 {
     font-family:caveat;
 }
 .logo-container {
-    width: auto;
-    height: 64px;
-    background-repeat: no-repeat;
-    background-size: contain;
     padding-top: 24px;
     padding-left: 160px;
 }
@@ -83,7 +96,7 @@ img {
     height: 64px;
 }
 img:hover {
-    transition: transform 0.4s ease;
+    transition: transform 0.2s ease;
     transform: scale(1.1);
     cursor: pointer;
     opacity: 0.8;
@@ -184,6 +197,12 @@ li:hover {
     }
     .Inquiry {
         gap: 8px;
+    }
+    .logo-container img {
+        height: 36px;
+    }
+    .Inquiry{
+        padding-left: 0px;
     }
 }
 @media screen and (max-width: 319px) {

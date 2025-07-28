@@ -3,71 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum</title>
+    <title>Fotogram</title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
     <link rel="stylesheet" href="main-style.css">
     <link rel="stylesheet" href="Img-style.css">
     <link rel="stylesheet" href="modal-style.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/6a63850e66.js" crossorigin="anonymous"></script>
 </head>
 <body onload="loadImg()">
-    <div class=" too-small-warning">Bitte wählen Sie eine höhere Auflösung um den Inhalt darzustellen!</div>
-    <div class="page-wrapper">
-        <div class="overlay d_none" id="overlay"></div>
-        <div id="dialog-popup" class="dialog-popup">
-        </div>
-        <header>
+    <header>
+        <div class="header-wrapper">
             <div class="logo-container">
                 <a href="./index.html" target="_self"><img src="./img/Fotogram_Logo.svg" alt="Fotogram ,Name der Webseite" loading="lazy"></a>
             </div>
-        </header>
-            <main>
-                    <div class="aligning">
-                        <h1>Impressum</h1>
-                        <p>
-                            Felix Jemlich<br />
-                            Schulstraße 11<br/>
-                            79400 Kandern
-                        </p>
-                            <h2>Kontakt</h2>
-                        <p>
-                            Telefon: +49 015772064208<br />
-                        </p>
-                        <p>
-                            E-Mail:
-                            <a href="mailto:felix.jemlich@gmail.com">felix.jemlich@gmail.com</a>
-                        </p>
-                        <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
-                            <span>Created my free logo at <a href="https://logomakr.com/" target="_blank">LogoMakr.com</a></span><br>
-                            <span>icons are provided by <a href="https://fontawesome.com/" rel="nofollow" target="_blank">FontAwesome</a> under free license</span><br>
-                            <span>pictures are taken from <a href="https://pixabay.com/de/" target="_blank">pixabay</a></span><br>
-                            <span><a href="https://fontawesome.com/license" target="_blank" rel="nofollow">Creative Commons Attribution 4.0 International license</a>.</span>
-                        </p>
-                    </div>
-                </span>
+        </div>
+    </header>
+        <div role="alert" class=" too-small-warning">Bitte wählen Sie eine höhere Auflösung um den Inhalt darzustellen!</div>
+        <div class="page-wrapper">
+            <main aria-labelledby="main-title">
+                <div class="aligning">
+                    <h1>Impressum</h1>
+                    <p>
+                        Felix Jemlich<br />
+                        Schulstraße 11<br/>
+                        79400 Kandern
+                    </p>
+                        <h2>Kontakt</h2>
+                    <p>
+                        Telefon: +49 015772064208<br />
+                    </p>
+                    <p>
+                        E-Mail:
+                        <a href="mailto:felix.jemlich@gmail.com">felix.jemlich@gmail.com</a>
+                    </p>
+                    <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+                        <span>Created my free logo at <a href="https://logomakr.com/" target="_blank">LogoMakr.com</a></span><br>
+                        <span>icons are provided by <a href="https://fontawesome.com/" rel="nofollow" target="_blank">FontAwesome</a> under free license</span><br>
+                        <span>pictures are taken from <a href="https://pixabay.com/de/" target="_blank">pixabay</a></span><br>
+                        <span><a href="https://fontawesome.com/license" target="_blank" rel="nofollow">Creative Commons Attribution 4.0 International license</a>.</span>
+                    </p>
+                </div>
             </main>
-        <footer>
+        </div>
+    <footer>
+        <div class="footer-wrapper">
             <div class="logo-container" id="footer-logo">
                 <a href="./index.html"><img src="./img/favicon.png" alt="Fotogram Logo"></a>
             </div>
-            <nav class="Inquiry">
+            <nav aria-label="Rechtliches" class="Inquiry">
             <a href="./Impressum.html">Impressum </a><p id="delimiter">|</p><a href="./Datenschutz.html">Datenschutz</a>
             </nav>
             <nav>
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/"target="_blank"><img  class="social-media-btn" src="./img/facebook_white.png" alt=""></a>
+                        <a href="https://www.facebook.com/"target="_blank"><img  class="social-media-btn" src="./img/facebook_white.png" alt="facebook link"></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/"target="_blank"><img  class="social-media-btn" src="./img/instagram_white.png" alt=""></a>
+                        <a href="https://www.instagram.com/"target="_blank"><img  class="social-media-btn" src="./img/instagram_white.png" alt="facebook link"></a>
                     </li>
                     <li>
-                        <a href="https://x.com/"target="_blank"><img  class="social-media-btn" src="./img/twitter_white.png" alt=""></a>
+                        <a href="https://x.com/"target="_blank"><img  class="social-media-btn" src="./img/twitter_white.png" alt="facebook link"></a>
                     </li>
                 </ul>
             </nav>
-        </footer>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/6a63850e66.js" crossorigin="anonymous"></script>
+        </div>
+    </footer>
 </body>
 </html>

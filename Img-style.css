@@ -1,6 +1,6 @@
 .container-layout {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns:repeat(4, 1fr);
     gap: 32px;
     margin-bottom: 32px;
 }
@@ -9,12 +9,16 @@
 }
 
 .overlay {
-    position: fixed; /*fixiert Position unabhängig vom scrollen*/
-    right: 0;
+    position: fixed;
+    top: 0;
     left: 0;
-    height:100%;
-    background-color: rgb(0,0,0,0.8);
-    z-index:1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .d_none {
@@ -23,7 +27,7 @@
 
 @media screen and (max-width: 950px) {
     .container-layout {
-        grid-template-columns: auto auto auto;
+        grid-template-columns:repeat(3, 1fr);
     }
 }
 @media screen and (max-width: 450px) {
