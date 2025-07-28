@@ -1,0 +1,33 @@
+.container-layout {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+.picture-container {
+    border-radius: 10px;
+}
+
+.overlay {
+    position: fixed; /*fixiert Position unabhängig vom scrollen*/
+    right: 0;
+    left: 0;
+    height:100%;
+    background-color: rgb(0,0,0,0.8);
+    z-index:1;
+}
+
+.d_none {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .container-layout {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width: 450px) {
+    .container-layout {
+        gap: 16px;
+    }
+}

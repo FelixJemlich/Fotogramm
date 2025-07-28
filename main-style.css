@@ -1,15 +1,20 @@
 html {
     font-family:caveat;
     font-size: 16px;
-    width: 100vw;
-    display: flex;
 }
 body {
     margin: 0px;
+    width: 100%;
+}
+.page-wrapper {
     display: flex;
-    flex: 1;
     flex-direction: column;
     min-height: 100vh;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.too-small-warning {
+    display: none;
 }
 header {
     background-color: black;
@@ -22,14 +27,36 @@ header {
 main {
     margin-left: 160px;
     margin-right: 160px;
+    flex:1;
+    
 }
 footer {
     background-color: black;
     height: 120px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.Inquiry {
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    gap: 16px;
+    font-size: 24px;
+    color: white;
+    align-items: center;
+}
+.Inquiry:hover {
+    text-decoration: none;
 }
 ul {
     display: flex;
+    list-style-type: none;
+    gap:16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 figure {
     all: unset;
@@ -37,7 +64,6 @@ figure {
 h1 {
     margin-left:160px;
     font-family:caveat;
-    font-size: 40px;
 }
 .logo-container {
     width: auto;
@@ -62,6 +88,13 @@ img:hover {
     cursor: pointer;
     opacity: 0.8;
 }
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
 .logo-container img:hover {
     transition: none !important;
     transform: none !important;
@@ -69,37 +102,102 @@ img:hover {
 figcaption {
     display: none;
 }
-
 .side-distance {
     margin-left: clamp(20px, 10vw, 160px);
     margin-right: clamp(20px, 10vw, 160px);
 }
 nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding-right: 16px;
+    margin-right: 160px;
 }
 .social-media-btn {
-    width: 32px;
-    height: auto;
     object-fit: contain;
+    width: 48px;
+    height: 48px;
 }
-#x {
-    background-image: url(/img/twitter_white.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#facebook {
-    background-image: url(/img/facebook_white.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#instagram {
-    background-image: url(/img/instagram_white.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+li:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 @font-face {
     font-family:caveat;
-    src:
-    url(/font/Caveat/Caveat-VariableFont_wght.ttf)
+    src:url(/font/Caveat/Caveat-VariableFont_wght.ttf)
+}
+@media screen and (max-width: 950px) {
+    .social-media-btn {
+        width:36px;
+        height:36px;
+    }
+    .logo-container img {
+        height: 48px;
+    }
+    .Inquiry {
+        font-size: 16px;
+    }
+    footer {
+        justify-content: space-evenly;
+    }
+    main {
+        margin-left:clamp(16px, 10vw, 160px);
+        margin-right:clamp(16px, 10vw, 160px);
+    }
+    h1 {
+        margin-left:clamp(16px, 10vw, 160px);
+    }
+    .logo-container {
+        padding-left:clamp(16px, 10vw, 160px);
+    }
+    nav {
+        margin-right:clamp(16px, 10vw, 160px);
+    }
+}
+@media screen and (max-width: 650px) {
+    #footer-logo {
+        display: none;
+    }
+    .Inquiry {
+        padding-left:clamp(16px, 10vw, 160px);
+    }
+}
+@media screen and (max-width: 450px) {
+    h1 {
+        font-size: 24px;
+    }
+    .social-media-btn {
+        width: 24px;
+        height: 24px;
+    }
+    ul {
+        padding-left: 0px;
+    }
+    .Inquiry {
+        gap: 8px;
+    }
+}
+@media screen and (max-width: 319px) {
+    .too-small-warning {
+    position: absolute;
+    display: block;
+    background: white;
+    color: red;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    background-image: url(./img/forbidden-155564_1280.png);
+    background-size:150px;
+    background-repeat: no-repeat;
+    background-position-x: 75px;
+    background-position-y: 400px;
+    }
+    .page-wrapper {
+    display: none;
+    }
 }
