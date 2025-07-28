@@ -3,11 +3,11 @@
     position: fixed;
     z-index: 3;
     top: 10px;
-    left: 40%;
+    left: 25%;
     right: 30%;
 }
 #dialog{
-    width: 400px;
+    width: 600px;
     height:600px;
     background-color: rgb(89, 116, 204);
     border-radius: 20px;
@@ -18,8 +18,10 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.cross-btn{
-    padding-left: 160px;
+.cross-btn {
+    position: absolute;
+    top: 40px;
+    right: clamp(20px, 10vw, 60px)
 }
 .cross-btn:hover {
     cursor: pointer;
@@ -56,9 +58,9 @@ button{
 }
 .churchid-box {
     height: 300px;
-    background-color: black;
-    margin-bottom: 150px;
+    width: 400px;
     border-radius: 0px;
+
 }
 .churchid-box img:hover{
     transform: none;
@@ -76,18 +78,31 @@ button{
     flex-direction: row;
     white-space: nowrap;
 }
-.caption-aligning{
-    padding-bottom: 100px;
-    position: fixed;
-    top: 475px;
+.caption {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
-@media screen and (max-width: 950px) {
-    .churchid-box {
-        width:200px;
-    }
+@media screen and (max-width: 2000px) {
     .cross-btn {
-        padding-left:clamp(16px, 7vw, 160px)
+        right:clamp(20px, 16vw, 500px)
+    }
+}
+@media screen and (max-width: 1650px) {
+    .cross-btn {
+        right:clamp(20px, 10vw, 200px)
+    }    
+}
+@media screen and (max-width: 1150px) {
+    .cross-btn{
+        right:clamp(20px, 10vw, 60px)
+    }
+}
+@media screen and (max-width: 950px) {
+    .cross-btn {
+        left: 350px;
     }
     .btn-aligning {
         gap:0px;
@@ -100,5 +115,26 @@ button{
 @media screen and (max-width: 600px) {
     .positioning-inpage {
         left:27%;
+    }
+    .churchid-box {
+        height: clamp(250px, 50vw, 300px);
+        width: clamp(250px, 50vw, 400px);
+        border-radius: 0px;
+    }
+    .positioning-inpage {
+        display: flex;
+        position: fixed;
+        z-index: 3;
+        top: 10px;
+        left: 5%;
+        right: 25%;
+    }
+    .cross-btn {
+        left:unset;
+    }
+}
+@media screen and (max-width: 430px) {
+    .cross-btn {
+        left:215px;
     }
 }

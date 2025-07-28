@@ -28,34 +28,34 @@ let ImageAlt= [
     "Die Michaelerkirche, barocke Wandpfeilerkirche mit zwei Fassadentürmen",
     "Iglesia de San Miguel, neogotische Pfarrkirche mit markanter rosa Cantera-Fassade",
     "Westminster Abbey, berühmte gotische Kathedrale",
-    "Auferstehungskirche des vergossenen Blutes, prachtvolle russisch-orthodoxe" +
+    "Auferstehungskirche des vergossenen Blutes, prachtvolle russisch-orthodoxe" +" "+
     "Kirche im neorussischen Stil mit farbenfrohen Zwiebeltürmen",
 ];
 
 let ImageCaption= [
-    "Santa Croce in Florenz ist eine berühmte Franziskanerkirche und Ruhestätte"+
+    "Santa Croce in Florenz ist eine berühmte Franziskanerkirche und Ruhestätte"+" "+
     "großer italienischer Persönlichkeiten.",
-    "Die Iglesia Parroquial in Spanien vereint gotische, Renaissance- und barocke"+ 
+    "Die Iglesia Parroquial in Spanien vereint gotische, Renaissance- und barocke"+" "+ 
     "Elemente.",
-    "St. Martin in Tellingstedt ist eine norddeutsche Feldsteinkirche mit typischer"+
+    "St. Martin in Tellingstedt ist eine norddeutsche Feldsteinkirche mit typischer"+""+
     "Backsteinarchitektur.",
-    "Das barocke Kloster Ettal bei Oberammergau ist für seine Architektur und"+
+    "Das barocke Kloster Ettal bei Oberammergau ist für seine Architektur und"+" "+
     "kulturellen Veranstaltungen bekannt.",
-    "Die Teynkirche in Prag beeindruckt durch ihre hochgotische Fassade und"+
+    "Die Teynkirche in Prag beeindruckt durch ihre hochgotische Fassade und"+" "+
     "malerische Lage am Altstädter Ring.",
-    "Die Tibidabo-Kirche in Barcelona bietet neugotische Architektur und"+ 
+    "Die Tibidabo-Kirche in Barcelona bietet neugotische Architektur und"+" "+ 
     "einen Panoramaausblick über die Stadt.",
-    "Die St.-Katharinenkirche ist eine spätgotische Hallenkirche mit dem"+
+    "Die St.-Katharinenkirche ist eine spätgotische Hallenkirche mit dem"+" "+
     "höchsten mittelalterlichen Turm Westniedersachsens.",
-    "Agios Georgios in Paralimni ist eine moderne byzantinische Kirche mit"+
+    "Agios Georgios in Paralimni ist eine moderne byzantinische Kirche mit"+" "+
     "markanten Kuppeln.",
-    "Die spätgotische Michaelerkirche in Steyr stammt aus dem 15. Jahrhundert"+
+    "Die spätgotische Michaelerkirche in Steyr stammt aus dem 15. Jahrhundert"+" "+
     "und war einst Teil eines Klosters.",
-    "Die Iglesia de San Miguel in Mexiko beeindruckt mit ihrer rosa neugotischen"+
+    "Die Iglesia de San Miguel in Mexiko beeindruckt mit ihrer rosa neugotischen"+" "+
     "Fassade und markanten Türmen.",
-    "Die Westminster Abbey in London ist eine gotische Kathedrale und Krönungskirche"+
+    "Die Westminster Abbey in London ist eine gotische Kathedrale und Krönungskirche"+" "+
     "britischer Monarchen.",
-    "Die Auferstehungskirche in St. Petersburg ist berühmt für ihre bunten Zwiebeltürme"+
+    "Die Auferstehungskirche in St. Petersburg ist berühmt für ihre bunten Zwiebeltürme"+" "+
     "und ihre Gedenkbedeutung."
 ];
 
@@ -126,8 +126,8 @@ function dialogWindow (imgId, ImageCaption, ImageAlt, ImageSrc, ImgName){
             <div class="churchid-box"id="churchId-${imgId}">
                 <img class="churchid-box" src="${ImageSrc[imgId]}" alt="${ImageAlt[imgId-1]}">
             </div>
-            <div>
-            <p class="caption-aligning">${ImageCaption[imgId]}</p>
+            <div class="caption">
+            <p>${ImageCaption[imgId]}</p>
             </div>
             <nav class="btn-aligning">
                 <button onclick="nextpictureLeft()" class="circle-btn arrow-btn">
