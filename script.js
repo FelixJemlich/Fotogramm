@@ -145,7 +145,7 @@ function dialogWindow(imgId, ImageCaption, ImageAlt, ImageSrc, ImgName) {
             </button>
         </div>
         <div class="churchid-box"id="churchId-${imgId}">
-            <img class="churchid-box" src="${ImageSrc[imgId]}" alt="${ImageAlt[imgId-1]}">
+            <img class="churchid-box" src="${ImageSrc[imgId]}" alt="${ImageAlt[imgId-1]} loading="lazy">
         </div>
         <div class="caption">
         <p>${ImageCaption[imgId]}</p>
