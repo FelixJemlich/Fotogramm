@@ -9,8 +9,9 @@
 #dialog{
     width: 600px;
     height:600px;
-    background-color: rgb(89, 116, 204);
+    background-color: rgb(184, 195, 231);
     border-radius: 20px;
+    border-color: rgb(255, 240, 240);
 }
 .positioning {
     display: flex;
