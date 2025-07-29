@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 .page-wrapper {
     display: flex;
@@ -118,8 +119,8 @@ figcaption {
     display: none;
 }
 .side-distance {
-    margin-left: clamp(20px, 10vw, 160px);
-    margin-right: clamp(20px, 10vw, 160px);
+    margin-left: clamp(10px, 10vw, 160px);
+    margin-right: clamp(10px, 10vw, 160px);
 }
 nav {
     display: flex;
@@ -205,6 +206,9 @@ li:hover {
     }
     .Inquiry{
         padding-left: 0px;
+    }
+    img {
+        height: 125px;
     }
 }
 @media screen and (max-width: 319px) {

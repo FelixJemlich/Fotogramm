@@ -13,8 +13,6 @@ let ImgName = [
     "Auferstehungskirche",
 ];
 
-let currentImg = 0;
-
 let ImageSrc = createImageSrc();
 
 let churchIds = createChurchIds();
@@ -144,29 +142,29 @@ function dialogWindow(imgId, ImageCaption, ImageAlt, ImageSrc, ImgName) {
         <p>${ImageCaption[imgId]}</p>
         </div>
         <nav class="btn-aligning">
-            <button onclick="nextpictureLeft()" class="circle-btn arrow-btn">
+            <button onclick="nextPicture(${imgId})" class="circle-btn arrow-btn">
                 <i class="fa-solid fa-arrow-left fa-xl"></i>
             </button>
             <p class="picture-from">
                 ${imgId+1} / ${ImgName.length}
             </p>
-            <button onclick="nextpictureRight()" class="circle-btn arrow-btn">
+            <button onclick="lastPicture(${imgId})" class="circle-btn arrow-btn">
                 <i class="arrow-btn fa-solid fa-arrow-right fa-xl"></i>
             </button>
         </nav>
     </dialog>
     `;
 }
-function nextpictureLeft() {
-    currentImg--;
-    if (currentImg < 0) currentImg = ImageCaption.length - 1;
-    openImgDetailDialog(currentImg);
+function nextPicture(imgId) {
+    imgId--;
+    if (imgId < 0) imgId = ImageCaption.length - 1;
+    openImgDetailDialog(imgId);
 }
 
-function nextpictureRight() {
-    currentImg++;
-    if (currentImg >= ImageCaption.length) currentImg = 0;
-    openImgDetailDialog(currentImg);
+function lastPicture(imgId) {
+    imgId++;
+    if (imgId >= ImageCaption.length) imgId = 0;
+    openImgDetailDialog(imgId);
 }
 
 function closeDialogWindow() {

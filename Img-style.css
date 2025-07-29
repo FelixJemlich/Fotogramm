@@ -25,13 +25,8 @@
     display: none;
 }
 
-@media screen and (max-width: 950px) {
-    .container-layout {
-        grid-template-columns:repeat(3, 1fr);
-    }
-}
 @media screen and (max-width: 450px) {
     .container-layout {
-        gap: 16px;
+        gap: 36px;
     }
 }
