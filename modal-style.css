@@ -87,6 +87,14 @@ button{
 .caption {
     display: flex;
 }
+@media screen and (min-width: 1920px) {
+    #dialog {
+        min-height: unset;
+        max-width: 800px;
+        max-height: 560px;
+        top:200px;
+    }
+}
 @media screen and (max-width: 950px) {
     .picture-from {
         width:80px;
