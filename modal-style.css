@@ -9,11 +9,12 @@
 }
 #dialog{
     width: 600px;
-    height:500px;
+    height:475px;
     background-color: rgb(241 150 114);
     border-radius: 20px;
     border-color: rgb(255, 240, 240);
     z-index: 5;
+    margin-top:80px;
 }
 .positioning {
     display: flex;
@@ -24,7 +25,8 @@
 .cross-btn {
     position: absolute;
     top: 40px;
-    right: clamp(20px, 10vw, 60px)
+    right: clamp(20px, 10vw, 60px);
+    left:560px;
 }
 .cross-btn:hover {
     cursor: pointer;
@@ -48,8 +50,8 @@
     justify-content: center;
 }
 .btn-aligning {
-    position: relative;
-    top: -150px;
+    position: absolute;
+    top: 450px;
     gap: 32px;
     align-items: center;
     flex-direction: row;
@@ -71,7 +73,6 @@ button{
 }
 .img-title-align{
     display: flex;
-    padding-top: 16px;
 }
 .picture-from {
     display: flex;
