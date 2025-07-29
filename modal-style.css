@@ -7,14 +7,18 @@
     overflow: hidden;
     z-index: 4;
 }
-#dialog{
-    width: 600px;
-    height:475px;
+#dialog {
+    width: 35%;
+    height: 650px;
+    max-height: 100vh;
+    min-height: 50%;
     background-color: rgb(241 150 114);
     border-radius: 20px;
     border-color: rgb(255, 240, 240);
     z-index: 5;
-    margin-top:80px;
+    position: fixed;
+    overflow: hidden;
+    top: calc(50% - 320px);
 }
 .positioning {
     display: flex;
@@ -23,10 +27,8 @@
     justify-content: space-between;
 }
 .cross-btn {
-    position: absolute;
-    top: 40px;
-    right: clamp(20px, 10vw, 60px);
-    left:560px;
+    display: flex;
+    align-items: center;
 }
 .cross-btn:hover {
     cursor: pointer;
@@ -50,86 +52,54 @@
     justify-content: center;
 }
 .btn-aligning {
-    position: absolute;
-    top: 450px;
-    gap: 32px;
     align-items: center;
     flex-direction: row;
-    margin: 0px;
+    gap:16px;
+    height:25px;
+    bottom:32px;
 }
 button{
     all:unset;
 }
 .churchid-box {
-    height: 300px;
-    width: 400px;
+    min height: 400px;
+    height: 100%;
+    width: 100%;
     border-radius: 0px;
-
+    max-height: 500px;
+    object-fit: cover;
 }
 .churchid-box img:hover{
     transform: none;
     opacity: 1;
     cursor: default;
 }
-.img-title-align{
+.img-title-align {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 .picture-from {
     display: flex;
-    justify-content: center;
-    font-size: 20px;
-    flex-direction: row;
+    font-size: 24px;
     white-space: nowrap;
 }
 .caption {
-    margin-bottom: 150px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-@media screen and (max-width: 2000px) {
-    .cross-btn {
-        right:clamp(20px, 16vw, 500px)
-    }
-}
-@media screen and (max-width: 1650px) {
-    .cross-btn {
-        right:clamp(20px, 10vw, 200px)
-    }    
-}
-@media screen and (max-width: 1150px) {
-    .cross-btn{
-        right:clamp(20px, 10vw, 60px)
-    }
+    display: flex;
 }
 @media screen and (max-width: 950px) {
-    .btn-aligning {
-        gap:0px;
-        padding-left: 16px;
-    }
     .picture-from {
         width:80px;
     }
 }
 @media screen and (max-width: 600px) {
-    .positioning-inpage {
-        left:27%;
-    }
-    .churchid-box {
-        height: clamp(250px, 50vw, 300px);
-        width: clamp(250px, 50vw, 400px);
-        border-radius: 0px;
-    }
-    .positioning-inpage {
-        display: flex;
-        top: 10px;
-        left: 5%;
-        right: 25%;
-    }
-    .cross-btn {
-        left:unset;
-    }
     #dialog {
-        min-width: 200px;
-        width: unset;
+        min-width: 250px;
+    }
+}
+@media screen and (max-width: 450px) {
+    #dialog {
+        height:600px;
     }
 }
